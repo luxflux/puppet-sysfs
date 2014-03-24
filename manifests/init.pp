@@ -7,11 +7,11 @@ class sysfs {
             ensure => installed;
     }
 
-    service {
+    exec {
         "sysfsutils":
-            hasstatus  => false,
-            hasrestart => true,
-            subscribe  => File["/etc/sysfs.conf"];
+            command     => "service sysfsutils restart",
+            refreshonly => true,
+            subscribe   => File["/etc/sysfs.conf"];
     }
 
     concat {
