@@ -9,7 +9,7 @@ class sysfs {
 
     exec {
         "sysfsutils":
-            command     => "service sysfsutils restart",
+            command     => "/usr/sbin/service sysfsutils restart",
             refreshonly => true,
             subscribe   => File["/etc/sysfs.conf"];
     }
