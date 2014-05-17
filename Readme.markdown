@@ -1,6 +1,6 @@
 # Sysfs puppet module
 
-Manage sysfs-settings on Debian/Ubuntu, it will reload sysfsutils
+Manage sysfs-settings on Debian and Red Hat based systems, it will reload sysfsutils
 automatically
 
 ## Dependencies
