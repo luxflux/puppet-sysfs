@@ -2,10 +2,7 @@ class sysfs {
 
     include concat::setup
 
-    package {
-        "sysfsutils":
-            ensure => installed;
-    }
+    ensure_packages(["sysfsutils"])
 
     case $osfamily {
     /^(Debian|Ubuntu)$/: {
