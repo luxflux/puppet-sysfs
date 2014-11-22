@@ -25,9 +25,9 @@ class sysfs {
 
     concat {
         "/etc/sysfs.conf":
-            owner   => root,
-            group   => root,
-            mode    => 644,
+            owner   => 'root',
+            group   => 'root',
+            mode    => '0644',
             require => Package["sysfsutils"];
     }
 }
