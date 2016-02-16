@@ -1,7 +1,5 @@
 class sysfs {
 
-    include concat::setup
-
     ensure_packages(["sysfsutils"])
 
     case $osfamily {
