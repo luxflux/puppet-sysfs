@@ -8,7 +8,7 @@ class sysfs {
         "sysfsutils":
           command     => "/usr/sbin/service sysfsutils restart",
           refreshonly => true,
-          subscribe   => File["/etc/sysfs.conf"];
+          subscribe   => Concat["/etc/sysfs.conf"];
       } 
     }
 
@@ -16,7 +16,7 @@ class sysfs {
         exec { 'sysfsutils_reload_rhel':
           command => '/usr/bin/awk -F= \'/(\S+)\s*=(\S+)/{cmd=sprintf("/bin/echo %s > /sys/%s",$2, $1); system(cmd)}\' /etc/sysfs.conf',
           refreshonly => true,
-          subscribe => File['/etc/sysfs.conf'];
+          subscribe => Concat['/etc/sysfs.conf'];
         } 
       } 
     }
